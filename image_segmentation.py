@@ -1,5 +1,3 @@
-#Neccessary Imports
-
 import os
 import cv2
 import pickle
@@ -32,7 +30,7 @@ def saveEncodings(encs,names,fname="encodings.pickle"):
 
     encodingsFile=fname
     
-    # dump the facial encodings data to disk
+    #send the facial encodings data to disk
     print("[INFO] serializing encodings...")
     f = open(encodingsFile, "wb")
     f.write(pickle.dumps(data))
@@ -184,7 +182,7 @@ def processKnownPeopleImages(path="./People/",saveLocation="./known_encodings.pi
         image=cv2.imread(imgPath)
         name=img.rsplit('.')[0]
         #Resize
-        image=cv2.resize(image,(0,0),fx=0.2,fy=0.2,interpolation=cv2.INTER_LINEAR)
+        image=cv2.resize(image,(0,0),fx=0.5,fy=0.5,interpolation=cv2.INTER_LINEAR)
         
         #Get locations and encodings
         encs,locs=createEncodings(image)
@@ -202,9 +200,9 @@ def processKnownPeopleImages(path="./People/",saveLocation="./known_encodings.pi
             
         #Show Image
         cv2.rectangle(image,(left,top),(right,bottom),color=(255,0,0),thickness=2)
-        cv2.imshow("Image",image)
-        cv2.waitKey(1)
-        cv2.destroyAllWindows()
+        # cv2.imshow("Image",image)
+        # cv2.waitKey(1)
+        # cv2.destroyAllWindows()
     saveEncodings(known_encodings,known_names,saveLocation)
 
 #Function for processing dataset images
@@ -236,7 +234,7 @@ def processDatasetImages(path="./Dataset/",saveLocation="./dataset_encodings.pic
         orig=image.copy()
         
         #Resize
-        image=cv2.resize(image,(0,0),fx=0.2,fy=0.2,interpolation=cv2.INTER_LINEAR)
+        image=cv2.resize(image,(0,0),fx=0.5,fy=0.5,interpolation=cv2.INTER_LINEAR)
         
         #Get locations and encodings
         encs,locs=createEncodings(image)
@@ -265,9 +263,9 @@ def processDatasetImages(path="./Dataset/",saveLocation="./dataset_encodings.pic
         #Show Image - only draw rectangle if faces were detected
         if len(locs) > 0:
             cv2.rectangle(image,(left,top),(right,bottom),color=(255,0,0),thickness=2)
-        cv2.imshow("Image",image)
-        cv2.waitKey(1)
-        cv2.destroyAllWindows()
+        # cv2.imshow("Image",image)
+        # cv2.waitKey(1)
+        # cv2.destroyAllWindows()
 
         
 def main():
