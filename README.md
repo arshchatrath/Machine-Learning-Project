@@ -39,8 +39,8 @@ Face-Recognition-based-Image-Separator/
 ### 1. Clone or Download the Repository
 
 ```bash
-git clone https://github.com/yourusername/Face-Recognition-based-Image-Separator.git
-cd Face-Recognition-based-Image-Separator
+git clone https://github.com/arshchatrath/Machine-Learning-Project.git
+cd Machine-Learning-Project
 ```
 
 ### 2. Create Virtual Environment
@@ -75,9 +75,9 @@ Add one clear photo per person to the `People/` folder:
 
 ```
 People/
-├── John.jpg
-├── Sarah.png
-└── Alex.jpg
+├── Arsh.jpg
+├── Monty.png
+└── Raju.jpg
 ```
 
 **Important:** 
@@ -108,9 +108,9 @@ Find organized images in the `output/` folder:
 
 ```
 output/
-├── John/          # All photos of John
-├── Sarah/         # All photos of Sarah
-├── Alex/          # All photos of Alex
+├── Arsh/          # All photos of Arsh
+├── Monty/         # All photos of Monty
+├── Raju/          # All photos of Raju
 ├── Group/         # Photos with multiple people
 └── Unknown/       # Unrecognized faces
 ```
@@ -184,32 +184,14 @@ If dlib fails to install:
 - **Image Processing**: OpenCV (cv2)
 - **Encoding Storage**: Pickle serialization
 
-## Bug Fixes & Improvements
-
-This version includes several improvements over the original:
-
-✅ **Fixed UnboundLocalError** - Added check before drawing rectangles  
-✅ **Error Handling** - Gracefully handles images with no faces  
-✅ **Better Tolerance** - Increased default from 0.5 to 0.75  
-✅ **Informative Warnings** - Shows which images have issues  
-
-## Credits
-
-Original project by [Harshit Saraswat](https://github.com/harshit-saraswat/Face-Recognition-based-Image-Separator)
-
 **Libraries Used:**
 - [dlib](http://dlib.net/) by Davis King
 - [face_recognition](https://github.com/ageitgey/face_recognition) by Adam Geitgey
 - [OpenCV](https://opencv.org/)
 
-## License
-
-MIT License - See LICENSE file for details
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
 ## Support
 
 If you encounter any issues or have questions:
