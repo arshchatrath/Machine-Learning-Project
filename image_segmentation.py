@@ -31,7 +31,6 @@ def readEncodingsPickle(fname):
 
 def createEncodings(image):
     
-    #Find face locations for all faces in an image
     face_locations = face_recognition.face_locations(image)
     
     #Create encodings for all faces in an image

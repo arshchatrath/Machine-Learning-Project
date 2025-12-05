@@ -89,13 +89,6 @@ People/
 
 Place all images you want to organize in the `Dataset/` folder:
 
-```
-Dataset/
-├── IMG_001.jpg
-├── IMG_002.jpg
-└── ...
-```
-
 ### Step 3: Run the Script
 
 ```bash
@@ -141,40 +134,12 @@ image = cv2.resize(image, (0,0), fx=0.2, fy=0.2, interpolation=cv2.INTER_LINEAR)
 - **0.3-0.4 (30-40%)**: Balanced speed and accuracy
 - **0.5+ (50%+)**: Slower but more accurate
 
-## Troubleshooting
-
-### "No face detected" Warning
-
-If you see `[WARNING] No face detected in [filename]`:
-
-1. **Check photo quality** - Ensure the face is clear and visible
-2. **Improve lighting** - Use well-lit photos
-3. **Face size** - Make sure the face is large enough in the image
-4. **Try a different photo** - Use a front-facing photo
-
-### Low Recognition Accuracy
-
-1. **Increase tolerance** - Change from 0.75 to 0.8
-2. **Use better reference photos** - Clear, front-facing, well-lit
-3. **Add multiple angles** - Use photos from different angles (name them Person1.jpg, Person2.jpg)
-4. **Increase processing size** - Change fx/fy from 0.2 to 0.3 or 0.4
-
 ### Installation Issues (Windows)
 
 If dlib fails to install:
 
 1. Install Visual Studio Build Tools with C++ support
 2. Or download pre-compiled wheel from GitHub (see Installation section)
-
-## How It Works
-
-1. **Load Reference Photos** - Processes images in `People/` folder
-2. **Create Face Encodings** - Generates 128-dimensional face encodings
-3. **Save Encodings** - Stores encodings in `known_encodings.pickle`
-4. **Process Dataset** - Analyzes each image in `Dataset/` folder
-5. **Detect Faces** - Finds all faces in each image
-6. **Compare & Match** - Compares detected faces with known encodings
-7. **Organize** - Saves images to appropriate folders
 
 ## Technical Details
 
@@ -188,13 +153,3 @@ If dlib fails to install:
 - [dlib](http://dlib.net/) by Davis King
 - [face_recognition](https://github.com/ageitgey/face_recognition) by Adam Geitgey
 - [OpenCV](https://opencv.org/)
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-## Support
-
-If you encounter any issues or have questions:
-1. Check the Troubleshooting section
-2. Review the original [Medium article](https://medium.com/analytics-vidhya/face-recognition-based-image-separator-408681f2360d)
-3. Open an issue on GitHub
