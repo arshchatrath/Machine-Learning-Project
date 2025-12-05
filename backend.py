@@ -74,10 +74,6 @@ async def list_dataset_images():
 @app.post("/classify")
 async def run_classification():
     try:
-        # Run the existing logic
-        # We need to make sure we don't block the event loop too much, 
-        # but for this simple app, running synchronously is probably fine or we can use run_in_executor
-        
         # Re-run processing
         print("Processing known people...")
         image_segmentation.processKnownPeopleImages(path=PEOPLE_DIR + "/")
@@ -117,7 +113,7 @@ async def reset_data():
         # Clear pickles
         if os.path.exists("known_encodings.pickle"):
             os.remove("known_encodings.pickle")
-        if os.path.exists("dataset_encodings.pickle"): # if it exists
+        if os.path.exists("dataset_encodings.pickle"): 
             os.remove("dataset_encodings.pickle")
             
         return {"status": "Data reset complete"}
