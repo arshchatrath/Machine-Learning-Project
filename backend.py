@@ -9,7 +9,6 @@ import image_segmentation
 
 app = FastAPI()
 
-# CORS configuration
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -23,7 +22,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Directories
 PEOPLE_DIR = "./People"
 DATASET_DIR = "./Dataset"
 OUTPUT_DIR = "./output"
@@ -86,8 +84,6 @@ async def run_classification():
 
 @app.get("/results")
 async def get_results():
-    # The output directory structure is ./output/<Name>/<Image>
-    # We want to return a structure like { "Name": ["image1.jpg", "image2.jpg"] }
     results = {}
     if os.path.exists(OUTPUT_DIR):
         for name in os.listdir(OUTPUT_DIR):

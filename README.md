@@ -4,12 +4,12 @@ Automatically organize and separate images based on face recognition. This tool 
 
 ## Features
 
-- 🎯 **Automatic Face Detection** - Detects faces in images using dlib's HOG-based detector
-- 👤 **Face Recognition** - Recognizes and matches faces with 128-dimensional encodings
-- 📁 **Smart Organization** - Automatically creates folders for each recognized person
-- 👥 **Group Detection** - Identifies and separates images with multiple people
-- ⚠️ **Error Handling** - Gracefully handles images with no detectable faces
-- 🔧 **Adjustable Tolerance** - Customize recognition sensitivity (default: 0.75)
+- **Automatic Face Detection** - Detects faces in images using dlib's HOG-based detector
+- **Face Recognition** - Recognizes and matches faces with 128-dimensional encodings
+- **Smart Organization** - Automatically creates folders for each recognized person
+- **Group Detection** - Identifies and separates images with multiple people
+- **Error Handling** - Gracefully handles images with no detectable faces
+- **Adjustable Tolerance** - Customize recognition sensitivity (default: 0.75)
 
 ## Project Structure
 

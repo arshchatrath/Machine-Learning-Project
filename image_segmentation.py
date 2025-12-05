@@ -82,7 +82,6 @@ def processKnownPeopleImages(path="./People/",saveLocation="./known_encodings.pi
         #Resize
         image=cv2.resize(image,(0,0),fx=0.5,fy=0.5,interpolation=cv2.INTER_LINEAR)
         
-        #Get locations and encodings
         encs,locs=createEncodings(image)
         
         # Check if at least 1 face was detected
